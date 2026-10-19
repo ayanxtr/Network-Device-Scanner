@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Network Scanner Dashboard</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <div class="top-bar">
+
+        <h1>Network Device Scanner</h1>
+
+        <button onclick="location.reload()">
+            Refresh Scan
+        </button>
+
+    </div>
+
+    <div class="container">
+
+        {% for device in devices %}
+
+        <div class="card">
+
+            <h2>{{ devices.ip }}</h2>
+
+            <p><strong>MAC Address:</strong> {{ device.mac }}</p>
+
+            <p><strong>Hostname:</strong> {{ device.hostname }}</p>
+
+            <p><strong>Vendor:</strong> {{ device.vendor }}</p>
+
+            <p><strong>Open Ports:</strong> {{ device.ports }}</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</body>
+
+</html>
